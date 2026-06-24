@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#8c7b42" />
+    <title>Backrooms: No Exit</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="game" id="game">
+      <canvas id="view" aria-label="First-person view of the Backrooms"></canvas>
+
+      <div class="vignette"></div>
+      <div class="grain"></div>
+      <div class="reticle" aria-hidden="true"></div>
+
+      <header class="hud">
+        <div class="signal"><i></i><span>LEVEL 0</span></div>
+        <div class="coordinates"><span id="coordinates">0.0 · 0.0</span><small>POSITION UNKNOWN</small></div>
+        <button id="soundToggle" aria-label="Toggle fluorescent hum">SOUND: ON</button>
+      </header>
+
+      <aside class="motion-status">
+        <span id="motionLabel">STANDING STILL</span>
+        <div><i id="motionBar"></i></div>
+      </aside>
+
+      <section class="intro" id="intro">
+        <div class="intro-noise"></div>
+        <div class="intro-content">
+          <span class="eyebrow">LEVEL 0 · THE LOBBY</span>
+          <h1>There is no<br /><em>way out.</em></h1>
+          <p>Only the hum of fluorescent lights and rooms that should not exist. Walk for as long as you like. The place will continue without you.</p>
+          <button id="enterButton">ENTER THE BACKROOMS <span>→</span></button>
+          <small>CLICK TO LOOK · ARROW KEYS OR WASD TO MOVE · ESC TO RELEASE MOUSE</small>
+        </div>
+      </section>
+
+      <section class="pause-card" id="pauseCard">
+        <span class="eyebrow">MOUSE RELEASED</span>
+        <h2>Click to keep exploring</h2>
+        <p>Arrow keys or WASD move in four directions.<br />Move the mouse to look anywhere.</p>
+      </section>
+
+      <div class="touch-controls" aria-label="Touch controls">
+        <div class="touch-pad">
+          <button data-key="forward">↑</button>
+          <button data-key="left">←</button><button data-key="back">↓</button><button data-key="right">→</button>
+        </div>
+        <div class="look-pad" id="lookPad"><span>DRAG TO LOOK</span></div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

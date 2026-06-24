@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#071b26" />
+    <title>Infinite Ocean</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <canvas id="ocean" aria-label="Infinite Ocean sailing game"></canvas>
+
+      <header class="topbar">
+        <div class="brand">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M4 24c5-5 9-5 14 0s9 5 18 0M7 17c4-4 8-4 12 0s8 4 15 0"/><circle cx="20" cy="9" r="3"/></svg>
+          <div><strong>INFINITE OCEAN</strong><span>THE UNCHARTED SEA</span></div>
+        </div>
+        <div class="voyage-stat"><span>VOYAGE</span><strong id="voyage">DAY 01</strong></div>
+        <button class="round-button" id="soundButton" aria-label="Toggle sound">
+          <svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4Zm12.5-.5a5 5 0 0 1 0 7M19 6a9 9 0 0 1 0 12"/></svg>
+        </button>
+      </header>
+
+      <section class="location-card">
+        <span class="overline">NOW SAILING</span>
+        <h1 id="regionName">The Stillwater Expanse</h1>
+        <p id="coordinates">00° 00′ N · 00° 00′ E</p>
+        <div class="compass" aria-hidden="true"><span>N</span><i id="compassNeedle"></i></div>
+      </section>
+
+      <section class="objective-card">
+        <div class="objective-bearing"><i id="treasureArrow">↑</i></div>
+        <div><span class="overline">THE SUNKEN CROWN</span><strong id="treasureDistance">500 miles</strong><small>Treasure bearing</small></div>
+        <div class="port-bearing"><i id="portArrow">↑</i><span><b id="portDistance">92 mi</b> RESUPPLY</span></div>
+      </section>
+
+      <aside class="logbook">
+        <div class="panel-heading">
+          <div><span class="overline">CAPTAIN'S LOG</span><h2>Discoveries</h2></div>
+          <strong id="discoveryTotal">0</strong>
+        </div>
+        <div class="discovery-list" id="discoveryList">
+          <div class="empty-log">
+            <span>✦</span>
+            <p>The map is empty.<br />Choose a horizon.</p>
+          </div>
+        </div>
+      </aside>
+
+      <section class="ship-status">
+        <div class="meter-row"><span>HULL</span><div><i id="hullBar"></i></div><strong id="hullValue">100</strong></div>
+        <div class="meter-row"><span>SUPPLIES</span><div><i id="supplyBar"></i></div><strong id="supplyValue">100</strong></div>
+        <div class="distance"><span>DISTANCE SAILED</span><strong id="distanceValue">0.0 nm</strong></div>
+        <div class="speed-line"><span>SPEED</span><div><i id="speedBar"></i></div><strong id="speedValue">0 kts</strong></div>
+      </section>
+
+      <section class="controls-hint">
+        <div class="keyset"><kbd>W</kbd><div><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd></div></div>
+        <p><strong>SAIL THE UNKNOWN</strong><span>WASD to sail · Space to fire</span></p>
+        <kbd class="fire-key">SPACE</kbd>
+      </section>
+
+      <div class="mobile-controls" aria-label="Touch sailing controls">
+        <button data-control="left" aria-label="Turn left">‹</button>
+        <button data-control="forward" aria-label="Sail forward">↑</button>
+        <button data-control="right" aria-label="Turn right">›</button>
+        <button class="fire-button" data-control="fire" aria-label="Fire cannons">●</button>
+      </div>
+
+      <div class="combat-alert" id="combatAlert"><span>⚠</span> CREATURE IN PURSUIT</div>
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+      <div class="event-card" id="eventCard" role="status" aria-live="polite">
+        <div class="event-icon" id="eventIcon">◈</div>
+        <span class="overline">NEW DISCOVERY</span>
+        <h2 id="eventTitle">Whispering Cay</h2>
+        <p id="eventDescription">A green island rises from the morning mist.</p>
+        <button id="eventClose">CONTINUE VOYAGE</button>
+      </div>
+
+      <div class="start-screen" id="startScreen">
+        <div class="start-copy">
+          <span class="overline">THERE IS NO EDGE</span>
+          <h1>Every horizon<br />hides a <em>story.</em></h1>
+          <p>Sail an endless, living ocean. Chart islands, investigate lost ships, face ancient creatures, and find cities that drift beyond the known world.</p>
+          <button id="setSail">SET SAIL <span>→</span></button>
+          <small>WASD / ARROW KEYS TO SAIL · SPACE TO FIRE</small>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
