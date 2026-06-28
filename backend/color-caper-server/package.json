@@ -1,0 +1,17 @@
+{
+  "name": "color-caper-websocket-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Deployable WebSocket backend for Color Caper multiplayer rooms.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "PORT=4191 node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}
